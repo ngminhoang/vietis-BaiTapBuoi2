@@ -25,6 +25,12 @@ public class UploadControllerImpl implements UploadController {
         return uploadService.handleCsvUpload(file);
     }
 
+    @GetMapping("/export")
+    @ResponseBody
+    public ResponseEntity<byte[]> handleCsvExport() {
+        return uploadService.handleCvExport();
+    }
+
     @GetMapping("/list")
     public ResponseEntity<List<Entity>> getListEntity(){
         return uploadService.getListEntity();

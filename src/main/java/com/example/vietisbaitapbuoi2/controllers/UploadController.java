@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface UploadController{
     ResponseEntity<String> handleCsvUpload(MultipartFile file);
+    ResponseEntity<byte[]>handleCsvExport();
     ResponseEntity<List<Entity>> getListEntity();
 }

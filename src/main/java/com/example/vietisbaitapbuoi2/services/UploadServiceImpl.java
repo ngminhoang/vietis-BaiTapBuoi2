@@ -28,6 +28,12 @@ public class UploadServiceImpl implements UploadService {
     }
 
     @Override
+    public ResponseEntity<byte[]> handleCvExport() {
+        List<Entity> list = entityRepository.findAll();
+        return CsvUtil.ExportCsv(list);
+    }
+
+    @Override
     public ResponseEntity<List<Entity>> getListEntity() {
         List<Entity> entities = entityRepository.findAll();
         if (entities.isEmpty()) {
